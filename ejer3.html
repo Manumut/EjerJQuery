@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Ejercicio 3 de JQuery 
+    Haz el ejercicio de forma dinamica.
+    Crea un contador que aumente cada vez que se haga clic en un botón.-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $("<button>").text("Contar").appendTo("body");
+        $("<p>").text("0").appendTo("body");
+            $(function (){
+                var cont = 0;
+                $("button").on("click", function () {
+                    cont++;
+                    $("p").text(cont).appendTo("body");
+                });
+            });
+    </script>
+</body>
+</html>
