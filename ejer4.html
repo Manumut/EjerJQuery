@@ -16,7 +16,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script>
-        
+        $("<button>").text("agregar").appendTo("body");
+        $("<input>").appendTo("body");
+        $("<ul>").appendTo("body");
+        $(function () {
+            $("button").on("click", function () {
+                $("<li>").text($("input").val()).appendTo("ul"); //Crea un li con el valor del input y lo mete dentro de la ul
+                $("input").val(""); //Limpia el input
+            });
+        });
     </script>
 
 </body>
