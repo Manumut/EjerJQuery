@@ -17,10 +17,10 @@
         
         $("<p>").text("Esto es un parrafo").appendTo("body");
         $(function () {
-            $("p").on("mouseover",function () { //Al pasar el raton sobre el parrafo
+            $("p").on("mouseenter",function () { //Al pasar el raton sobre el parrafo
                 $(this).text("Parrafo modificado"); //Modifica el parrafo
             });
-            $("p").on("mouseout",function () { //Al dejar de pasar el raton sobre el parrafo
+            $("p").on("mouseleave",function () { //Al dejar de pasar el raton sobre el parrafo
                 $(this).text("Esto es un parrafo");
             })
         });
