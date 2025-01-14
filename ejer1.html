@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 JQuery</title>
+    <style>
+
+        p {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ejercicio 1 de JQuery -->
+    <p>Esto es un párrafo</p>
+    <button>Mostrar</button> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $("button").on("click", function () {
+                $(this).prev().slideToggle(500); // Selecciona el párrafo anterior al botón y le da la visibilidad del párrafo
+
+                // Cambia el texto del botón según su estado
+                if ($(this).text() === "Mostrar") {
+                    $(this).text("Ocultar");
+                } else {
+                    $(this).text("Mostrar");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
