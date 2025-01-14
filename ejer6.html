@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Ejercicio 6 de JQuery 
+     Haz el ejercicio de forma dinamica.
+    Muestra un elemento con un texto y, al pasar el ratón sobre él, cambia su contenido
+     -->
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+     <script>
+        
+        $("<p>").text("Esto es un parrafo").appendTo("body");
+        $(function () {
+            $("p").on("mouseover",function () { //Al pasar el raton sobre el parrafo
+                $(this).text("Parrafo modificado"); //Modifica el parrafo
+            });
+            $("p").on("mouseout",function () { //Al dejar de pasar el raton sobre el parrafo
+                $(this).text("Esto es un parrafo");
+            })
+        });
+     </script>
+</body>
+</html>
