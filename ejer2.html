@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Ejercicio 2 de JQuery 
+    Haz el ejercicio de forma dinamica.
+    Cuando el usuario hace clic en un botón, cambia el color de fondo de la
+    página a un color aleatorio-->
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $("<button>").text("Otro color").appendTo("body");
+        $(function () {
+            $("button").on("click", function () {
+                $("body").css("background-color" );
+            });
+        });
+    </script>
 </body>
 </html>
