@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: "system-ui";
+        min-height: 100vh;
+        align-content: center;
+    }
+
+    .carrusel{
+        max-width: 1000px;
+        height: 400px;
+        margin: auto;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.4);
+        overflow: hidden; /*para que no se salga del contenedor*/
+        position: relative;/*para que se ponga en el medio*/
+
+        .imagenes{
+            display: flex;
+            transition: transform 0.4s cubic-bezier(.77,.11,.02,.98);
+        }
+        .next,
+        .prev{
+            padding: 20px 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); /*para que se ponga en el medio*/
+            border: none;
+            background-color: transparent;
+            color:black;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        .next{
+            right: 10px;
+        }
+        .prev{
+            left: 10px;
+        }   
+    
+    </style>
+</head>
+<body>
+    <div class="carrusel">
+        <div class="imagenes">
+            <img src="https://picsum.photos/id/208/1000/400" alt="">
+            <img src="https://picsum.photos/id/210/1000/400" alt="">
+            <img src="https://picsum.photos/id/212/1000/400" alt="">
+        </div>
+        <div class="navegacion">
+            <button class="next">></button>
+            <button class="prev"><</button>
+        </div>
+    </div>
+
+   
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            var indiceActual = 0;
+            var imagenes = $(".imagenes img");
+            
+            console.log(imagenes);
+            
+
+            function mover(){
+                $(".imagenes").css("transform", `translateX(${-indiceActual * 1000}px)`);
+            }
+
+            $(".next").on("click", function () {
+                // Cuando llegue a la ultima imagen desaparezca el boton
+                           
+
+
+                    indiceActual++;
+                
+                    if (indiceActual == imagenes.length - 1) {
+                        $(".next").hide();
+                    }
+                    mover();
+                    // NO ME LLEGA A FUNCIONAR
+                }
+                else{
+                        $(".next").show();
+                    }        
+            });
+            $(".prev").on("click", function () {
+                indiceActual--;
+                mover();
+            });
+        
+        
+            
+            
+    });
+
+
+    </script>
+
+
+
+</body>
+</html>
