@@ -35,7 +35,7 @@
             transform: translateY(-50%); /*para que se ponga en el medio*/
             border: none;
             background-color: transparent;
-            color: white;
+            color:black;
             font-size: 2em;
             cursor: pointer;
         }
@@ -70,15 +70,34 @@
             var indiceActual = 0;
             var imagenes = $(".imagenes img");
             
-
+            console.log(imagenes);
+            
 
             function mover(){
                 $(".imagenes").css("transform", `translateX(${-indiceActual * 1000}px)`);
             }
 
             $(".next").on("click", function () {
-                indiceActual++;
-                mover();
+                // Cuando llegue a la ultima imagen desaparezca el boton
+                           
+
+                if (indiceActual < imagenes.length - 1) {
+                    indiceActual++;
+                
+                    if (indiceActual == imagenes.length - 1) {
+                        $(".next").hide();
+                    }else{
+                        $(".next").show();
+                    }
+
+                    mover();
+
+                    // NO MELLEGA A FUNCIONAR
+                }
+                
+
+                
+                
                 
             });
             $(".prev").on("click", function () {
