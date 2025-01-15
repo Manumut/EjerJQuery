@@ -15,8 +15,9 @@
     </style>
 </head>
 <body>
-    <!-- Ejercicio 1 de animacions con JQuery
-       Crea un div que se mueva 300px hacia la derecha al hacer clic en el div-->
+    <!-- Ejercicio 2 de animacions con JQuery
+       Haz que un cuadro crezca y reduzca su opacidad cuando pases el mouse sobre él.
+-->
 
        <div>
 
@@ -27,15 +28,12 @@
 
     <script>
         $(function () {
-            var mov = 300;
-            $("div").on("click", function(){
-                $("div").animate({
-                    left: mov
-                })
-                mov += 300;
+            $("div").hover(function () {
+                $(this).animate({opacity: 0.5}, 1000);
+            }, function () {
+                $(this).animate({opacity: 1}, 1000);
             });
         });
-
     </script>
 </body>
 </html>
