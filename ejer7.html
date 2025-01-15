@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imagen{
+           filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Ejercicio 7 de JQuery 
+     Crea una imagen que, cuando se haga clic sobre ella, cambie su fuente src por otra imagen de tu elección.
+     -->
+     <img src="https://picsum.photos/200/300" alt="">
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+     <script>
+        
+        // $("<img>").attr("src","https://picsum.photos/200/300").appendTo("body"); //Crea la imagen de forma dinamica
+
+        $(function () {
+            $("img").on("click",function () { //Al pasar el raton sobre la imagen
+                $(this).attr("src","https://picsum.photos/200/301"); //Cambia la imagen
+                
+                //El attr sirve para meter atributos a lo q queramos exactamente.
+                $(this).attr("class","imagen"); 
+                $(this).addClass("imagen");
+                // con addClass se agrega una clase que queremos
+            });
+        })
+        
+        
+     </script>
+</body>
+</html>
