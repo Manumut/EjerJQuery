@@ -108,13 +108,17 @@
         
             // AJAX
         var enlace = "https://dummyjson.com/products";
+        var ul = $("<ul>");
         $.ajax({
             type: "GET",
             url: enlace,
             success: function (respuesta) {
                 $(respuesta.products).each(function(i,e){
-                    console.log(e.title)});
-                }
+                    ul.append(`<li> ${e.title} </li>`);
+                    
+                });
+                $("body").append(ul);
+            },
                 
             });    
     });
