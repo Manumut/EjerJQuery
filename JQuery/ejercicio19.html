@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Ejercicio 2 de JQuery 
+        Crea un botón que, cuando se haga clic, añada un nuevo párrafo a la
+    página con un efecto de desvanecimiento.-->
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+       $(function (){
+        $("<button>").text("crea un parrafo").appendTo("body");
+            $("button").on("click", function(){
+                $("<p>").text("Creo parrafo").appendTo("body").hide();
+                $("p").fadeIn(2000); //Muestra el parrafo con un efecto de desvanecimiento
+
+
+            })
+       });
+    </script>
+</body>
+</html>
