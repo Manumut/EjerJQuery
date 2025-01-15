@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #ffffff;
+        }
+        .oscuridad{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ejercicio 17 de JQuery 
+    Implementa un interruptor para alternar entre un modo oscuro y un modo
+    claro en la página    
+     -->
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+     <script>
+        $("body").append(`<button>Modo Oscuro</button>`);
+
+        $("button").on("click", function(){
+            $("body").toggleClass("oscuridad");
+            if($("body").hasClass("oscuridad")){
+                $("button").text("Modo claro")
+            }else{
+                $("button").text("Modo oscuro")
+            }
+        })
+     </script>
+</body>
+</html>
