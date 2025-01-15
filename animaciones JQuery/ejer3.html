@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  div{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+  }
+
+    </style>
+</head>
+<body>
+    <!-- Ejercicio 1 de animacions con JQuery
+       Haz que un cuadro se mueva diagonalmente al hacer doble clic. -->
+
+       <div>
+
+       </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            var izq =300;
+            var arr =300;
+            $("div").dblclick(function () {
+                $(this).animate({
+                    left: izq,
+                    top: arr
+                });
+                izq += 300;
+                arr += 300; 
+            });
+        });
+
+    </script>
+</body>
+</html>
