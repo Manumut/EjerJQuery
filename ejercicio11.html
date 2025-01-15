@@ -5,22 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .imagen{
-           filter: blur(5px);
+        .hide{
+            display: none;
         }
     </style>
 </head>
 <body>
-    <!-- Ejercicio 10 de JQuery 
-    Crea una estructura de paginación para navegar entre varios grupos de elementos.
-     -->
-    
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <div class="v1 hide"> <!--- Esto es una clase que hace que se esconda-->
+        <h1>563456345</h1>
+        <p>kkkdddd</p>
+        <ul>
+            <li>333</li>
+            <li>4444</li>
+            <li>6666</li>
+        </ul>
+    </div>
+    <div class="v2 hide">
+        <h1>sdfsdfsdfsdf</h1>
+        <p>rrrttttrrrr</p>
+        <ul>
+            <li>666</li>
+            <li>99999</li>
+            <li>234234</li>
+        </ul>
+    </div>
+    <div class="v3 hide">
+        <h1>mmmmmmm</h1>
+        <p>!!!!!!!!!!!</p>
+        <ul>
+            <li>4343434</li>
+            <li>45454545</li>
+            <li>56565656</li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("<div>").attr("class", "botones").appendTo("body");
+            $("<button></button>").text("Pag 1").appendTo(".botones");
+            $("<button></button>").text("Pag 2").appendTo(".botones");
+            $("<button></button>").text("Pag 3").appendTo(".botones");
 
-     <script>
-        
-        
-        
-     </script>
+            $("button").on("click", function(){
+                if($(this).text() == "Pag 1"){
+                    $(".v1").removeClass("hide") //Esto significa que se elimina la clase hide del elemento con la clase v1
+                    $(".v2").addClass("hide")
+                    $(".v3").addClass("hide")
+                }
+                if($(this).text() == "Pag 2"){
+                    $(".v1").addClass("hide")
+                    $(".v2").removeClass("hide")
+                    $(".v3").addClass("hide")
+                }
+                if($(this).text() == "Pag 3"){
+                    $(".v1").addClass("hide")
+                    $(".v2").addClass("hide")
+                    $(".v3").removeClass("hide")
+                }
+            })
+        })
+    </script>
 </body>
 </html>
