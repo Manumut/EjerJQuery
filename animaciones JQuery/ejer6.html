@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  div{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+  }
+
+    </style>
+</head>
+<body>
+    <!-- Ejercicio 6 de animacions con JQuery
+       Simula un rebote horizontal haciendo que un cuadro se mueva de izquierda a derecha. -->
+
+       <div>
+
+       </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(function (){
+            var mov = 900;
+            $("div").on("click", function(){
+                $(this).animate({
+                    left: mov,
+                }, 1000, function(){
+                    $(this).animate({
+                        left: 0,
+                    }, 1000)
+                })
+            })
+        })
+
+    </script>
+</body>
+</html>
