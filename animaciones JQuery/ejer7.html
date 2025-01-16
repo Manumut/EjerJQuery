@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            .contenedor{
+                top: 200px;
+                left: 500px;
+                width: 500px;
+                height: 500px;
+                position: relative;
+                overflow: hidden;
+
+                .imagenes{
+                    position: absolute;
+                    width: 500px;
+                    height: 500px;
+                    display: flex;
+
+                    img{
+                        width: 500px;
+                        height: 500px;
+                    }
+                }
+            }
+            .botones{
+                .antes, .despues{
+                    position: absolute;
+                    top: 50%;
+                transform: translateY(-50%);
+                }
+                .despues{
+                    right: 0;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="imagenes">
+            <img src="./fotos/foto1.jpg" alt="">
+            <img src="./fotos/foto2.jpg" alt="">
+            <img src="./fotos/foto3.jpg" alt="">   
+        </div>
+        <div class="botones">
+            <button class="antes">Anterior</button>
+            <button class="despues">Siguiente</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        let indice = 0;
+
+        $(".antes").hide();
+
+        function mover(){
+            $(".imagenes").animate({
+                "left": -indice*500
+            })
+        }
+        
+        $(".despues").on("click", function(){
+            console.log(indice)
+            if(indice == 1){
+                $(".despues").hide();
+            }else{
+                $(".despues").show();
+            }
+
+            $(".antes").show();
+            
+            indice++;
+            mover();
+        })
+        $(".antes").on("click",function(){
+            if(indice <= 2){
+                $(".despues").show();
+            }
+            if(indice == 1){
+                $(".antes").hide();
+            }else{
+                $(".antes").show();
+            }
+            console.log(indice);
+            indice--;
+            mover();
+        })
+    </script>
+</body>
+</html>
