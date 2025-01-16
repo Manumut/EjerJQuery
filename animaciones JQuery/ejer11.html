@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            transition: all 1s;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Ejercicio 11 de animacions con JQuery
+       Crea un efecto de rotación animado utilizando transformaciones CSS con jQuery.-->
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+         $("body").append("<div></div>");
+        $(function(){
+            var angulo = 0;
+            setInterval(function () {
+                angulo += 360;
+                $("div").css({
+                    'transform': `rotate(${angulo}deg)`
+                });
+            }, 1000);
+        })
+
+        // De esta forma se haria cada vez q clicase
+        // $(function(){
+        // $("div").on("click",function () {
+        //         angulo += 360;
+        //         $("div").css({
+        //             'transform': `rotate(${angulo}deg)`
+        //         });
+        //     });
+        // })
+    </script>
+   
+</body>
+</html>
