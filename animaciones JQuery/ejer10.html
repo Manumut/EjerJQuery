@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Progreso</title>
+    <style>
+        #barra {
+            width: 100px;
+            height: 10px;
+            border: solid 3px black;
+            position: relative;
+        }
+
+        #progreso {
+            width: 0px;
+            height: 10px;
+            background-color: rgb(157, 220, 85);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Ejercicio 10: Animaciones con jQuery
+         Crea una barra de progreso que se llene al hacer clic en un botón. -->
+
+    <div id="barra">
+        <div id="progreso"></div>
+    </div>
+    <p>0%</p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("<button>Click</button>").appendTo("body");
+            var progresoActual = 0; // Progreso inicial
+            var incremento = 20; // Incremento del progreso en cada clic
+
+            $("button").on("click", function () {
+                // Verifica si la barra ya está llena
+                if (progresoActual >= 100) {
+                    $("p").text("100%"); // Si ya está llena, muestra el texto "100%
+                }
+
+                // Incrementa el progreso
+                progresoActual += incremento;
+                if (progresoActual > 100) {
+                    progresoActual = 100; // Limita el progreso al 100%
+                }
+
+                // Actualiza el ancho de la barra de progreso
+                $("#progreso").animate({
+                    width: progresoActual + "%"
+                }); // Duración de la animación
+
+                // Actualiza el texto con el porcentaje actual
+                $("p").text(progresoActual + "%");
+            });
+        });
+    </script>
+</body>
+</html>
