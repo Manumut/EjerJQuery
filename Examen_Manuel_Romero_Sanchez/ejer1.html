@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            border: solid 1px black;
+            font-size: x-large;
+            margin: auto;
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- EJERCICIO1
+
+Crea una página con una tabla que contenga al menos cinco filas y tres columnas.
+- Al hacer clic en cualquier celda de la tabla, su color de fondo debe cambiar a un color
+ seleccionado aleatoriamente. (Ayuda: Pensar en colores RGB / valores de 0 a 255 .)
+- Añade un botón en la parte superior de la página que, al presionarlo, restablezca todos los
+ colores de las celdas al color original. -->
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <button>Reinicio</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+         $(function () {
+            $("td").on("click", function () {
+                var r = Math.floor(Math.random() * 255);
+                var g = Math.floor(Math.random() * 255);
+                var b = Math.floor(Math.random() * 255);
+                $(this).css("background-color" , `rgb(${r}, ${g}, ${b})`);
+            });
+
+            $("button").on("click", function () {
+                $("td").css("background-color" , "white");
+            });
+        });
+    </script>
+
+</body>
+</html>

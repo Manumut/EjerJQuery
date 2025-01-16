@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- EJERCICIO7
+
+Permite al usuario añadir tareas escribiendo en un campo de texto y pulsando un botón:
+
+- Cada tarea debe aparecer en una lista con un botón para eliminarla.
+- Añade una sección llamada "Tareas Completadas".
+- Cuando el usuario haga clic en una tarea, esta debe moverse a la sección "Tareas
+ Completadas".
+- Incluye un botón para eliminar todas las tareas completadas de la lista "Tareas Completadas".
+-->
+    <p>Tareas</p>
+    <ul id="tareas">
+
+    </ul>
+
+    <p>Tareas completadas</p>
+    <ul id="completadas"> 
+
+    </ul>
+
+    <input type="text" id="tarea">
+    <button id="subir">Añadir</button>
+    <button id="eliminar">Eliminar</button>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#subir").on("click", function () {
+                              
+                var tarea = $("#tarea").val();
+                $("<li>").text(tarea).appendTo("#tareas");
+                $("li").on("click", function () {
+                    $(this).appendTo("#completadas");
+                })
+                $("input").val("");  
+            });
+            $("#eliminar").on("click", function () {
+                $("#completadas").empty(); 
+            });
+
+           
+        });
+    </script>
+
+
+</body>
+</html>

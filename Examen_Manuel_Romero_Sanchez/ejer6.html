@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 20px;
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- EJERCICIO6
+
+Crea una funcionalidad para cambiar los estilos de una sección en tiempo real:
+
+- Un control para cambiar el tamaño de la fuente.
+- Un control para cambiar el color del texto.
+- Un control para cambiar el color de fondo.
+- Los cambios deben aplicarse inmediatamente al interactuar con los controles.
+- Añade un botón que permita regresar los estilos de la sección a su estado original -->
+    
+    <section>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magnam alias exercitationem adipisci recusandae magni dolore tempora quia odio soluta!
+        </p>
+        <input type="number" id="tam" placeholder="Tamaño de la fuente">
+        <button id="tama">Añadir</button>
+
+        <input type="text" id="colL" placeholder="Color del texto">
+        <button id="ColLe">Añadir</button>
+
+        <input type="text" id="colF" placeholder="Color de fondo">
+        <button id="colFo">Añadir</button>
+
+        <button id="Com">Regreso</button>
+    </section>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $("#tama").on("click", function () {
+                var taman = $("#tam").val();
+                console.log(taman);
+                $("p").css("font-size", `${taman}px`); 
+            });
+
+            $("#ColLe").on("click", function () {
+                var colT = $("#colL").val();
+                console.log(colT);
+                $("p").css("color", colT); 
+            });
+
+            $("#colFo").on("click", function () {
+                var colFo = $("#colF").val();
+                console.log(colFo);
+                $("p").css("backgroundColor", colFo); 
+
+            });
+
+            $("#Com").on("click", function () {
+                $("p").css("font-size", "20px");
+                $("p").css("color", "black");
+                $("p").css("background-color", "white");
+            });
+        })
+    </script>
+
+</body>
+</html>

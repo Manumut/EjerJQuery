@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>        
+        img{
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- EJERCICIO3
+Permite modificar las características de una imagen:
+- Crea un botón que, al hacer clic, muestre una imagen oculta.
+- Añade un botón que cambie el tamaño (ancho y alto) de una imagen a 300x300 píxeles al hacer
+ clic.
+- Diseña un botón que cambie el borde de una imagen (grosor, color y estilo).
+- Implementa un botón que modifique la opacidad de una imagen al 50%.
+- Crea un evento que permita rotar una imagen 180° al pasar el ratón sobre ella 
+ -->
+    <button id="mos">Mostrar</button>
+    <button id="tam">Tamaño</button>
+    <button id="bor">Borde</button>
+    <button id="opa">Opacidad</button>
+
+    <img src="https://picsum.photos/id/237/200/300" alt="">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    
+    <script>
+         $(function () {
+            
+            $("#mos").on("click", function(){
+                $("img").show();
+            })
+
+            $("#tam").on("click", function(){
+                $("img").css("width", "300px");
+                $("img").css("height", "300px");
+            })
+
+            $("#bor").on("click", function(){
+                $("img").css("border", "5px solid red");
+            })
+
+            $("#opa").on("click", function(){
+                $("img").css("opacity", "0.5");
+            })
+
+            $("img").on("mouseover", function() {
+                $("img").css("transform", "rotate(180deg)");
+            })
+            $("img").on("mouseleave", function() {
+                $("img").css("transform", "rotate(0deg)");            
+            })
+         })
+    </script>
+
+</body>
+</html>

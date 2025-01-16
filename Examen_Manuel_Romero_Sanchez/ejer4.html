@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            border: solid 1px black;
+            font-size: large;
+            margin: auto;
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- EJERCICIO4
+
+Usa jQuery con AJAX para realizar una solicitud a una API pública
+(https://jsonplaceholder.typicode.com/users) y mostrar los datos (Nombre y email) en una tabla.  -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        const miApi = "https://jsonplaceholder.typicode.com/users";
+        $("<table>").appendTo("body");
+        $.ajax({
+            method: 'GET',
+            url:miApi,
+            success: function (respuesta) {
+                console.log(respuesta);
+                
+                $(respuesta).each(function(index,elemento){
+                    console.log(index);
+                    console.log(elemento);
+                    
+                    $(`<tr><td>${elemento.name}</td><td>${elemento.email}</td></tr>`).appendTo("table");
+                })
+            }
+        })
+    </script>
+
+</body>
+</html>
+
+
+</html>
