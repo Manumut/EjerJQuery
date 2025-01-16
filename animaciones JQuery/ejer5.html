@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  div{
+    width: 100px;
+    height: 100px;
+    top: 500px;
+    background-color: red;
+    position: relative;
+  }
+
+    </style>
+</head>
+<body>
+    <!-- Ejercicio 5 de animacions con JQuery
+Desplaza un cuadro hacia arriba y reduce su opacidad hasta desaparecer. -->
+
+       <div>
+
+       </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $("div").on("click", function(){
+                $(this).animate({
+                    "top":"0",
+                    "opacity":"0"
+                }, 2000)
+            })
+        })
+
+    </script>
+</body>
+</html>
